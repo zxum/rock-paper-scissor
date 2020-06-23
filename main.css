@@ -1,0 +1,27 @@
+body {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#score {
+    margin: auto;
+    font-family: 'Noto Sans', sans-serif;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 35%; 
+    padding: 10px;
+}
+
+thead {
+    width: 50%;
+}
+
+#computer img {
+    vertical-align: middle;
+    width: 30%;
+}
+
+
+
