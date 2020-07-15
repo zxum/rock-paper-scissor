@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -7,38 +8,46 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div id="score">
-        <table>
-            <thead>
-                <tr>
-                    <th>Player Score</th>
-                    <th>Computer Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td id="playerScore">0</td>
-                    <td id="computerScore">0</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div id="computer">
-        <img class="computerSelection" class="smaller" src="rock.svg">
-        <img class="computerSelection" src="paper.svg">
-        <img class="computerSelection" src="scissors.svg">
-    </div>
-    <div id="player">
-        <img class="playerSelection" src="rock.svg">
-        <img class="playerSelection" src="paper.svg">
-        <img class="playerSelection" src="scissors.svg">
-    </div>
-    <div id="shoot">
-        <button>Shoot!</button>
-    </div>    
+    <div id="headline">Rock, Paper, Scissor, Shoot!</div>
+
+
+    <h3 id="scoreboard">SCOREBOARD</h1>
+        <div id="score" class="center">
+            <table id="scores">
+                <thead id='score-head'>
+                    <tr id='score-head-row'>
+                        <th>Player</th>
+                        <th>Computer</th>
+                    </tr>
+                </thead>
+                <tbody id='score-body'>
+                    <tr id='score-body-row-1'>
+                        <td id="playerScore">0</td>
+                        <td id="computerScore">0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="selection">COMPUTER PICKS</h1>
+            <div class="options" id="computer">
+                <div id="comp-rock" value="rock" class="computerSelection"><img data-id="rock" src="rock.svg"></div>
+                <div id="comp-paper" value="paper" class="computerSelection"><img data-id="paper" src="paper.svg"></div>
+                <div id="comp-scissors" value="scissors" class="computerSelection"><img data-id="scissors" src="scissors.svg"></div>
+            </div>
+
+            <h3 class="selection">YOU PICK</h1>
+                <p id="instructions">Select one of the options below:</p>
+                <div class="options" id="player">
+                    <button id="player-rock" data-id="rock" class="playerSelection"><img class="imgbtn" id="rock" src="rock.svg"></button>
+                    <button id="player-paper" data-id="paper" class="playerSelection"><img class="imgbtn" id="paper" src="paper.svg"></button>
+                    <button id="player-scissors" data-id="scissors" class="playerSelection"><img class="imgbtn" id="scissors" src="scissors.svg"></button>
+                </div>
+
 </body>
 
 <script src="index.js"></script>

@@ -1,67 +1,67 @@
-function game() {
+let playerSelects = document.querySelectorAll('.playerSelection')
 
-    var roundNum = 0;
-    var computerWins = 0;
-    var playerWins=0;
-
-    for (let i=0; i<5; i++) {
-        
-        function computerPlay() {
-            var selection = ["rock", "paper","scissors"];
-            var computerPick = selection[Math.floor(Math.random()*selection.length)];
-            return computerPick;
-        }
-        function singleRound(playerSelection, computerSelection) {
-            var playerSelection = playerSelection.toLowerCase();
-            if (playerSelection == "rock" && computerSelection == "paper") {
-                computerWins += 1;
-                console.log("You lose, Paper beats Rock!");
-                return computerWins;
-            } else if (playerSelection == "scissors" && computerSelection == "rock") {
-                computerWins += 1;
-                console.log("You lose, Rock beats Scissors");
-                return computerWins;
-            } else if (playerSelection == "paper" && computerSelection == "scissors") {
-                computerWins += 1;
-                console.log("You lose! Scissors beats Paper");
-                return computerWins;
-            } else if (playerSelection == "paper" && computerSelection == "rock") {
-                playerWins += 1;
-                console.log("You win! Paper beats Rock");
-                return playerWins;
-            } else if (playerSelection == "scissors" && computerSelection == "paper") {
-                playerWins += 1;
-                console.log("You win! Scissors beats Paper");
-                return playerWins;
-            } else if (playerSelection == "rock" && computerSelection == "scissors") {
-                playerWins += 1;
-                console.log("You win! Rock beats Scissors!");
-                return playerWins;
-            } else if (playerSelection == computerSelection) {
-                console.log("It is a tie!");
-            } else {
-                console.log("There is an error.");
-                }
-            }
-        
-        roundNum = roundNum + 1;
-        console.log("Round" + roundNum);
-        var playerSelection = prompt('Rock, Paper, or Scissor?');
-        console.log("Player picked: " + playerSelection);
-        var computerSelection = computerPlay();
-        console.log("Computer picked: " + computerSelection);
-        singleRound(playerSelection,computerSelection);
-        console.log("Computer score: " + computerWins)
-        console.log("Player score: " + playerWins)
-    }
-    if (playerWins > computerWins) {
-            console.log("Player wins game!");
-        }
-        else if (playerWins < computerWins) {
-            console.log("Computer wins game!");
-        }
-        else {
-            console.log("It was a tie!");
-        }
+for (var i = 0; i < playerSelects.length; i++) {
+    playerSelects[i].addEventListener('click', playGame);
 }
-console.log(game());
+
+var playerWins = 0;
+var computerWins = 0;
+
+function computerPick() {
+    let rps = ["rock", "paper", "scissors"];
+    var computerSelect = rps[Math.floor(Math.random() * rps.length)];
+    return computerSelect
+}
+
+function scoreKeeper() {
+    let var1 = document.getElementById('playerScore').innerText = playerWins;
+    console.log(var1);
+    let var2 = document.getElementById('computerScore').innerText = computerWins;
+    console.log(var2);
+}
+
+
+
+function playGame(e) {
+    var imgs = document.querySelectorAll('img')
+
+    for (var i = 0; i < imgs.length; i++) {
+        imgs[i].classList.remove('choice');
+    }
+
+    var compPlays = computerPick();
+    var compSelectImg = document.querySelector(`img[data-id="${compPlays}"]`);
+    compSelectImg.classList.add('choice');
+    var playerPlays = e.target.attributes.id.value;
+    var playerSelectImg = document.querySelector(`img[id="${playerPlays}"]`);
+    playerSelectImg.classList.add('choice');
+    console.log(compPlays);
+    console.log(playerPlays);
+
+
+    if (playerPlays == "rock" && compPlays == "paper") {
+        computerWins += 1;
+        scoreKeeper();
+    } else if (playerPlays == "scissors" && compPlays == "rock") {
+        computerWins += 1;
+        scoreKeeper();
+    } else if (playerPlays == "paper" && compPlays == "scissors") {
+        computerWins += 1;
+        scoreKeeper();
+    } else if (playerPlays == "paper" && compPlays == "rock") {
+        playerWins += 1;
+        scoreKeeper();
+    } else if (playerPlays == "scissors" && compPlays == "paper") {
+        playerWins += 1;
+        scoreKeeper();
+    } else if (playerPlays == "rock" && compPlays == "scissors") {
+        playerWins += 1;
+        scoreKeeper();
+    } else if (playerPlays == compPlays) {
+        alert("It's a tie");
+    } else {
+        alert('Something went wrong');
+    }
+
+
+}
