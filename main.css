@@ -1,27 +1,114 @@
 body {
+    margin-top: 50px;
+    font-family: Noto-San, sans-serif;
+}
+
+#headline {
+    font-size: 3em;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+}
+
+#scoreboard,
+.selection,
+#instructions {
+    text-align: center;
+    color: #8a9064;
+}
+
+p#instructions {
+    font-size: 11px;
+}
+
+div#score {
+    border: 5px solid #e0e6c4;
+    border-radius: 15px;
+    width: 200px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
+    margin-bottom: 80px;
+}
+
+table#scores {
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: collapse;
+}
+
+th,
+td {
+    padding: 10px;
     text-align: center;
 }
 
-#score {
+td {
+    color: #9d504b;
+}
+
+thead#score-head {
+    color: #8a9064;
+}
+
+div.options {
+    display: inline-block;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#player,
+div#computer {
+    display: flex;
+}
+
+button.playerSelection,
+div.computerSelection {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+}
+
+
+/*button {
+    border: none;
+    background-color: #8a9064;
+    border-radius: 15px;
+    width: 200px;
+    height: 60px;
+    font-size: 2em;
+    color: #e0e6c4;
+    margin-left: auto;
+    margin-right: auto;
+}*/
+
+.playerSelection {
+    cursor: pointer;
+    border: none;
+}
+
+.imgbtn {
+    position: relative;
     margin: auto;
-    font-family: 'Noto Sans', sans-serif;
-    border: 1px solid black;
-    border-radius: 10px;
-    width: 35%; 
-    padding: 10px;
 }
 
-thead {
-    width: 50%;
+.imgbtn:hover {
+    background-color: #8a9064;
+    border-radius: 15px;
 }
 
-#computer img {
-    vertical-align: middle;
-    width: 30%;
+div#shoot {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
 }
 
-
-
+.choice {
+    background-color: #9d504b;
+    border-radius: 15px;
+}
